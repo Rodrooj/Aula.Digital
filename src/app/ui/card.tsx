@@ -1,4 +1,4 @@
-import Button from '@/app/ui/button';
+import Link from 'next/link';
 
 interface CardProps {
   title: string;
@@ -8,14 +8,17 @@ interface CardProps {
 
 const Card = ({ title, description, href }: CardProps) => {
   return (
-    <div className="bg-card text-card-foreground rounded-lg p-6 flex flex-col shadow-lg">
-      <h3 className="text-xl font-bold">{title}</h3>
-      <p className="mt-2 text-gray-300 flex-grow">{description}</p>
-      <div className="mt-auto">
-        <Button href={href}>
+    <div className="bg-slate-800 text-white rounded-lg p-6 flex flex-col shadow-lg min-h-[200px] hover:bg-slate-700 transition-colors">
+      <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+      <p className="text-gray-300 flex-grow text-sm leading-relaxed">{description}</p>
+      <div className="mt-6">
+        <Link
+          href={href}
+          className="inline-flex items-center justify-center gap-2 text-sm font-medium bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition-colors"
+        >
           Ver o conteúdo
           <span aria-hidden="true"> →</span>
-        </Button>
+        </Link>
       </div>
     </div>
   );

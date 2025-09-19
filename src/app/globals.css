@@ -1,11 +1,13 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #111827;
-  --card-background: #111827;
+  --card-background: #1e293b;
   --card-foreground: #ffffff;
-  --accent: #14b8a6;
+  --accent: #10b981;
 }
 
 @theme {
@@ -30,4 +32,5 @@ body {
   background-color: theme('colors.background');
   color: theme('colors.foreground');
   font-family: theme('fontFamily.sans');
+  min-height: 100vh;
 }
